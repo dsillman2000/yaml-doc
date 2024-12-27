@@ -1,0 +1,67 @@
+[tool.poetry]
+name = "yaml-doc"
+version = "0.1.0"
+description = "A Jinja-based templating CLI and library for rendering the contents of modular YAML files."
+authors = ["David Sillman <dsillman2000@gmail.com>"]
+packages = [{ include = "yaml_doc" }]
+readme = "README.md"
+license = "MIT"
+keywords = [
+    "yaml",
+    "yml",
+    "pyyaml",
+    "yaml-extras",
+    "jinja",
+    "template",
+    "jinja2",
+    "cli",
+    "command-line",
+    "command-line-interface",
+    "render",
+    "rendering",
+    "modular",
+    "yaml-modules",
+    "yaml-doc",
+    "yaml-docs",
+    "yaml-documents",
+    "yaml-documentation",
+    "yaml-templates",
+    "yaml-template",
+    "yaml-jinja",
+    "doc",
+    "docs",
+    "documentation",
+    "autogen",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+
+    # Indicate who your project is intended for
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Software Development :: Code Generators",
+    "Topic :: Software Development :: Documentation",
+    "Topic :: Text Processing :: Markup",
+    "Topic :: File Formats",
+    "Topic :: Utilities",
+
+    # Specify the Python versions you support here.
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+]
+
+[project.urls]
+Repository = "https://github.com/dsillman2000/yaml-doc.git"
+
+
+[tool.poetry.dependencies]
+python = "^3.11"
+yaml-extras = "^0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.3"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
