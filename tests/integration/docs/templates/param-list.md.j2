@@ -1,0 +1,6 @@
+# List of params
+
+{% for param in params -%}
+- **{{ param.name }}**:
+    - `[{{ param.first_value }}, {{ param.last_value }}]`
+{% endfor -%}

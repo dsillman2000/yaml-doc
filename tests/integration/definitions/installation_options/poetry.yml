@@ -1,0 +1,6 @@
+|
+  Install the package using Poetry:
+
+  ```bash
+  poetry add yaml-doc
+  ```

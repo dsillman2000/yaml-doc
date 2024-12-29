@@ -1,0 +1,6 @@
+|
+  Install the package using pip:
+
+  ```bash
+  pip install yaml-doc
+  ```

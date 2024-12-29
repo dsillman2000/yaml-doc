@@ -1,0 +1,15 @@
+name: yaml-doc
+installation_options:
+  pip: |
+    Install the package using pip:
+
+    ```bash
+    pip install yaml-doc
+    ```
+  poetry: |
+    Install the package using Poetry:
+
+    ```bash
+    poetry add yaml-doc
+    ```
+authors: !import-all-parameterized definitions/authors/{name:*}.yml

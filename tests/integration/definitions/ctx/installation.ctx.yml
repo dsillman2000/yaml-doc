@@ -1,0 +1,3 @@
+installation_options:
+  pip: !import definitions/installation_options/pip.yml
+  poetry: !import definitions/installation_options/poetry.yml

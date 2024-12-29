@@ -58,9 +58,15 @@ Repository = "https://github.com/dsillman2000/yaml-doc.git"
 [tool.poetry.dependencies]
 python = "^3.11"
 yaml-extras = "^0"
+jinja2 = "^3"
+click = "^8"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.3.3"
+
+
+[tool.poetry.scripts]
+yaml-doc = "yaml_doc.cli:cli"
 
 [build-system]
 requires = ["poetry-core"]

@@ -1,0 +1,15 @@
+homepage:
+  - template: docs/templates/homepage/installation.md.j2
+    sources: [definitions/ctx/installation.ctx.yml]
+    outputs: [docs/homepage/installation.md]
+  - template: docs/templates/homepage.md.j2
+    sources: [definitions/ctx/homepage.ctx.yml]
+    outputs: [docs/index.md]
+
+params:
+  - template: docs/templates/param-list.md.j2
+    sources: [definitions/ctx/param-list.ctx.yml]
+    outputs: [docs/param-list.md]
+  - template: docs/templates/each-param-page.md.j2
+    sources: ["definitions/param_defs/{filename:*}.yml"]
+    outputs: ["docs/param-list/{filename}.md"]

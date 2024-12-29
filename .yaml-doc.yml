@@ -1,0 +1,32 @@
+#
+#   Welcome to yaml-doc!
+# ========================
+#
+# See the example "stage groups" below for examples of how to use yaml-doc to build individual
+# documents (or suites of documents) from templates and data sources.
+#
+#
+#
+# my_first_group:
+#   # How to build a template using a single input file
+#   - template: path/to/template.md.j2
+#     sources: [path/to/source.yml]
+#     outputs: [path/to/output.md]
+#  # How to build a template using multiple input files
+#   - template: path/to/template.md.j2
+#     sources: [path/to/my_source.yml, path/to_another/source.yml]
+#     outputs: [path/to/output_1.md, path/to/output_2.md]
+#
+# my_second_group:
+#  # Build a template using a glob of inputs, each written to a different folder.
+#  - template: path/to/template.md.j2
+#    sources: [path/to/{name:*}/sources.yml]
+#    outputs: [path/to/directory/{name}/output.md]
+#  # Build a template using a glob of inputs, each written to a different file in the same folder.
+#  - template: path/to/template.md.j2
+#    sources: [path/to/{source:*}.yml]
+#    outputs: [path/to/outputs/{source}.md]
+#  # Example using (**) wildcard globs
+#  - template: path/to/template.md.j2
+#    sources: [path/to/{sub_path:**}/{base_name:*}.yml]
+#    outputs: [path/to/outputs/{sub_path}/output/{base_name}.md]

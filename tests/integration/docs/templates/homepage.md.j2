@@ -1,0 +1,13 @@
+# Hello, {{ name }}!
+
+This page was built with yaml-doc. It's a simple tool to generate documentation from YAML files.
+
+{% include "docs/homepage/installation.md" %}
+
+## Acknowledgements
+
+Authors:
+{% for author in authors %}
+- {{ author.name }} <{{ author.email }}>
+    - GitHub: {{ author.github }}
+{% endfor %}
