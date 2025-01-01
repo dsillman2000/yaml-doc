@@ -1,3 +1,6 @@
+"""This module contains Click CLI-specific parameters for use with the yaml-doc CLI commands.
+"""
+
 import click
 
 

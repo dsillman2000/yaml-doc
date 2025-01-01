@@ -1,3 +1,10 @@
+"""
+This module manages the Click CLI for yaml-doc. It provides a command line interface for the 
+yaml-doc package, which in turn calls "entrypoint" functions from the `core` yaml-doc module.
+
+The parameters used across the CLI commands are defined in the `params` module.
+"""
+
 from pathlib import Path
 import click
 from yaml_doc import params, core
@@ -26,13 +33,6 @@ def init(ctx: click.Context) -> Path:
         Path: Path to the newly created configuration file.
     """
     return core.yaml_doc_init(ctx.obj["PROJECT_PATH"])
-    # config_path: Path = ctx.obj["PROJECT_PATH"] / ".yaml-doc.yml"
-    # if config_path.exists():
-    #     click.echo(f"Configuration file already exists at {config_path}.")
-    # else:
-    #     config_path.touch()
-    #     click.echo(f"Created configuration file at {config_path}.")
-    # return config_path
 
 
 @cli.command()
@@ -43,15 +43,15 @@ def ls(ctx: click.Context, select: list[str]) -> list[str]:
 
     Args:
         ctx (click.Context): Click context object.
+        select (list[str]): String argument(s) passed to --select / -s.
+
+    Returns:
+        list[str]: List of strings representing the build plan for each stage in a human-readable
+            format.
     """
     ls_result: list[str] = core.yaml_doc_ls(ctx.obj["PROJECT_PATH"], select)
     click.echo("\n\n".join(ls_result))
     return ls_result
-    # config_path: Path = ctx.obj["PROJECT_PATH"] / ".yaml-doc.yml"
-    # config = core.YamlDocConfig.from_yaml(config_path)
-    # ls_result = config.list(core.YamlStageSelector.from_strs(select))
-    # click.echo("\n\n".join(ls_result))
-    # return ls_result
 
 
 @cli.command()
@@ -65,6 +65,3 @@ def build(ctx: click.Context, select: list[str]) -> list[Path]:
         select (list[str]): String argument(s) passed to --select / -s.
     """
     return core.yaml_doc_build(ctx.obj["PROJECT_PATH"], select)
-    # config_path: Path = ctx.obj["PROJECT_PATH"] / ".yaml-doc.yml"
-    # config = core.YamlDocConfig.from_yaml(config_path)
-    # return config.build(core.YamlStageSelector.from_strs(select))
